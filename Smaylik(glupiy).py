@@ -27,7 +27,7 @@ while a:
         turtle.forward(1)
         turtle.left(3)
     turtle.end_fill()
-    turtle.width=5
+    turtle.pen(pensize=5)
     turtle.penup()
     turtle.goto(-50,30)
     turtle.pendown()
@@ -36,7 +36,7 @@ while a:
     turtle.goto(-90,30)
     turtle.pendown()
     turtle.forward(1)
-    turtle.width=1
+    turtle.pen(pensize=1)
     turtle.penup()
     turtle.goto(-90,-90)
     turtle.pendown()
