@@ -18,12 +18,33 @@ def draw_XBOCT():
     xvost = gr.Rectangle(gr.Point(200,370), gr.Point(400,400))
     konchik.setFill('green')
     xvost.setFill('green')
+    xvostic = gr.Polygon(gr.Point(0,380), gr.Point(0,300), gr.Point(50,300))
+    xvostic.setFill('green')
+    xvostic.draw(window)
     konchik.draw(window)
     xvost.draw(window)
 def draw_face():
+    x=300
+    y=210
     face = gr.Rectangle(gr.Point(100, 150), gr.Point(300,250))
     face.setFill('green')
+    nos = gr.Circle(gr.Point(270,190), 3)
+    nos.setFill('black')
+    yazik = gr.Line(gr.Point(x,y), gr.Point(x+1,y))
+    yazik.setOutline('red')
+    for r in range (50):
+        for rr in range (6):
+            x1 =x+1
+            y1 =y-1
+            yazik = gr.Line(gr.Point(x,y), gr.Point(x1,y1))
+            yazik.draw(window)
+        for rr in range (6):
+            x1 =x+1
+            y1 =y+1
+            yazik = gr.Line(gr.Point(x,y), gr.Point(x1,y1))
+            yazik.draw(window)
     face.draw(window)
+    nos.draw(window)
 def draw_textt():
     window.setBackground('pink')
     message = gr.Text(gr.Point(window.getWidth()/2, 30),  'Я прогал всю ночь и я устал')
