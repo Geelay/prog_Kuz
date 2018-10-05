@@ -56,7 +56,7 @@ def draw_telo():
     telo = gr.Rectangle(gr.Point(100, 250), gr.Point(200,400))
     telo.setFill('green')
     telo.draw(window)
-def draw_angry_lecturer():
+def draw_pytonchik():
     draw_face()
     draw_eye()
     draw_XBOCT()
@@ -64,7 +64,7 @@ def draw_angry_lecturer():
     draw_textt()
 
 
-draw_angry_lecturer()
+draw_pytonchik()
 
 window.getMouse()
 
