@@ -32,17 +32,6 @@ def draw_face():
     nos.setFill('black')
     yazik = gr.Line(gr.Point(x,y), gr.Point(x+1,y))
     yazik.setOutline('red')
-    for r in range (50):
-        for rr in range (6):
-            x1 =x+1
-            y1 =y-1
-            yazik = gr.Line(gr.Point(x,y), gr.Point(x1,y1))
-            yazik.draw(window)
-        for rr in range (6):
-            x1 =x+1
-            y1 =y+1
-            yazik = gr.Line(gr.Point(x,y), gr.Point(x1,y1))
-            yazik.draw(window)
     face.draw(window)
     nos.draw(window)
 def draw_textt():
