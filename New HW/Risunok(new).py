@@ -46,7 +46,7 @@ def onpixel():
     y=[10,9]   
     for i in range(len(x)):
         pixel(100+10*x[i],100+10*y[i],247,94,37) 
-        
+   
 def kotik():       
     wtpixel()
     onpixel()
