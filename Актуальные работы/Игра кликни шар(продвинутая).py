@@ -10,7 +10,7 @@ speed=100
 number_of_balls=10
 x=[]
 y=[]
-text1=canvas.create_text(500, 25, text='Счёт: '+str(schet),font='Arial 25')
+text1=canvas.create_text(400, 25, text='Счёт: '+str(schet),font='Arial 25')
 def cliick(event):
     global schet,x,y,speed,text1
     
@@ -18,12 +18,16 @@ def cliick(event):
     b = event.y
     for i in range (number_of_balls):
         if a in range(x[i], x[i]+50) and b in range(y[i], y[i]+50):  
-            canvas.delete(ov[i])
-            canvas.delete(text1)
-            text1=canvas.create_text(500, 25, text='Счёт: '+str(schet),font='Arial 25')
-            schet +=1
-            if speed > 10:
-                speed-=10
+            if (a-x[i])^2+(b-y[i])^2 < 2500:
+                y[i]=1000
+                x[i]=1000
+                canvas.delete(ov[i])
+                canvas.delete(text1)
+                schet +=1
+                text1=canvas.create_text(400, 25, text='Счёт: '+str(schet),font='Arial 25')
+                if speed > 10:
+                    speed-=10
+                break
         #создание текста со счётом
             
 def create_list_of_balls(number):
