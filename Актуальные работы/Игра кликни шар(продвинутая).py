@@ -12,7 +12,7 @@ x=[]
 y=[]
 text1=canvas.create_text(400, 25, text='Счёт: '+str(schet),font='Arial 25')
 def cliick(event):
-    global schet,x,y,speed,text1
+    global schet,x,y,speed,text1,ballsy,ballsx
     
     a = event.x
     b = event.y
@@ -21,6 +21,8 @@ def cliick(event):
             if (a-x[i])^2+(b-y[i])^2 < 2500:
                 y[i]=1000
                 x[i]=1000
+                ballsx[i]=0
+                ballsy[i]=0
                 canvas.delete(ov[i])
                 canvas.delete(text1)
                 schet +=1
@@ -28,8 +30,8 @@ def cliick(event):
                 if speed > 5:
                     speed-=5
                 break
-        #создание текста со счётом
             
+#создание текста со счётом            
 def create_list_of_balls(number):
     lst = []
     while len(lst) < number:
@@ -51,7 +53,7 @@ def risovach(i):
     return (ovall)
 
 def tick_handler():
-    global x, y,balls
+    global x, y,ballsx,ballsy
     for i in range (number_of_balls):
 
         if x[i] < 40:
