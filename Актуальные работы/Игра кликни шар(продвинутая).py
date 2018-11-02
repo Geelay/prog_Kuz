@@ -7,7 +7,7 @@ canvas = Canvas(root)
 canvas.pack(fill=BOTH, expand=1)
 schet=0
 speed=100
-number_of_balls=10
+number_of_balls=50
 x=[]
 y=[]
 text1=canvas.create_text(400, 25, text='Счёт: '+str(schet),font='Arial 25')
@@ -25,8 +25,8 @@ def cliick(event):
                 canvas.delete(text1)
                 schet +=1
                 text1=canvas.create_text(400, 25, text='Счёт: '+str(schet),font='Arial 25')
-                if speed > 10:
-                    speed-=10
+                if speed > 5:
+                    speed-=5
                 break
         #создание текста со счётом
             
