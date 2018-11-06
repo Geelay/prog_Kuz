@@ -10,7 +10,7 @@ speed=100
 number_of_balls=50
 x=[]
 y=[]
-text1=canvas.create_text(400, 25, text='Счёт: '+str(schet),font='Arial 25')
+text1=canvas.create_text(400, 25, text='Счёт: '+str(schet)+'/'+str(number_of_balls),font='Arial 25')
 def cliick(event):
     global schet,x,y,speed,text1,ballsy,ballsx
     
@@ -26,7 +26,7 @@ def cliick(event):
                 canvas.delete(ov[i])
                 canvas.delete(text1)
                 schet +=1
-                text1=canvas.create_text(400, 25, text='Счёт: '+str(schet),font='Arial 25')
+                text1=canvas.create_text(400, 25, text='Счёт: '+str(schet)+'/'+str(number_of_balls),font='Arial 25')
                 if speed > 5:
                     speed-=5
                 break
