@@ -1,9 +1,9 @@
 import turtle
-a=True
 x=0
 turtle.shape('turtle')
+turtle.speed(100)
 turtle.right(270)
-while a:
+for i in range (10):
 
     for x in range(180):
         turtle.forward(1)

@@ -1,10 +1,11 @@
 import turtle
-a=True
+
 x=0
 l=1
 turtle.shape('turtle')
+turtle.speed(100)
 turtle.right(90)
-while a:
+for i in range(10):
     
     for x in range(360):
         turtle.forward(l)
@@ -12,4 +13,4 @@ while a:
     for x in range(360):
         turtle.forward(l)
         turtle.right(1)
-    l+=0.2
+    l += 0.2

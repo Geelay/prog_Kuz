@@ -1,10 +1,7 @@
-
 import turtle
-a=True
 b=1
-turtle.speed(9)
 turtle.shape('turtle')
-while a:
+for i in range (200):
     turtle.forward(b)
-    turtle.left(89)
-    b+=1
+    turtle.left(20)
+    b+=0.2

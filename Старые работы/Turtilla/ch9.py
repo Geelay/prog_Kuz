@@ -9,7 +9,7 @@ k=0
 t=3
 l=360//t
 turtle.shape('turtle')
-while a:
+for i in range (10):
     turtle.penup()
     turtle.goto(x,y)
     turtle.pendown()

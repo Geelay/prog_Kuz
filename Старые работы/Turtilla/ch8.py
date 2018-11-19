@@ -1,8 +1,8 @@
 import turtle
-a=True
+
 b=10
 turtle.shape('turtle')
-while a:
+for i in range (10):
 
     turtle.forward(b)
     turtle.left(90)
