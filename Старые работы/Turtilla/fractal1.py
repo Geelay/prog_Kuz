@@ -1,11 +1,10 @@
 import turtle
-a=True
-ltl=int(input())
-x=0
+ltl = 3
+x = 0
 turtle.shape('turtle')
+turtle.speed(1000)
 
-def fignya(lt):
-
+def lr1(lt):
     turtle.forward(lt)
     turtle.left(60)
     turtle.forward(lt)    
@@ -13,46 +12,56 @@ def fignya(lt):
     turtle.forward(lt)   
     turtle.left(60) 
     turtle.forward(lt) 
-def fignyaa(lt):
-
-    fignya(lt)
+    
+def lr2(lt):
+    lr1(lt)
     turtle.left(60)
-    fignya(lt)    
+    lr1(lt)    
     turtle.right(120)
-    fignya(lt)   
+    lr1(lt)   
     turtle.left(60) 
-    fignya(lt)
-def fignyaaa(lt):
-    fignyaa(lt)
+    lr1(lt)
+    
+def lr3(lt):
+    lr2(lt)
     turtle.left(60)
-    fignyaa(lt)    
+    lr2(lt)    
     turtle.right(120)
-    fignyaa(lt)   
+    lr2(lt)   
     turtle.left(60) 
-    fignyaa(lt)
-def fignyaaaa(lt):
-    fignyaaa(lt)
+    lr2(lt)
+    
+def lr4(lt):
+    lr3(lt)
     turtle.left(60)
-    fignyaaa(lt)    
+    lr3(lt)    
     turtle.right(120)
-    fignyaaa(lt)   
+    lr3(lt)   
     turtle.left(60) 
-    fignyaaa(lt)
-def fignyaaaaa(lt):
-    fignyaaaa(lt)
+    lr3(lt)
+    
+def lr5(lt):
+    lr4(lt)
     turtle.left(60)
-    fignyaaaa(lt)    
+    lr4(lt)    
     turtle.right(120)
-    fignyaaaa(lt)   
+    lr4(lt)   
     turtle.left(60) 
-    fignyaaaa(lt)
-def fignyaaaaaa(lt):
-    fignyaaaaa(lt)
+    lr4(lt)
+    
+def lr6(lt):
+    lr5(lt)
     turtle.left(60)
-    fignyaaaaa(lt)    
+    lr5(lt)    
     turtle.right(120)
-    fignyaaaaa(lt)   
+    lr5(lt)   
     turtle.left(60) 
-    fignyaaaaa(lt)
-while a:
-    fignyaaaaaa(ltl)
+    lr5(lt)
+    
+turtle.pen(pencolor = "red")
+turtle.penup()
+turtle.goto(-770, 0)
+turtle.pendown()
+print('fullscreen')
+for i in range (10):
+    lr6(ltl)
