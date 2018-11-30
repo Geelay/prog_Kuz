@@ -8,7 +8,7 @@ def check_simplicity(x):
     for i in range (1,x):
         if x % i == 0:
             check += 1
-    if check < 3 and x !=9 and x!=4:
+    if check < 2:
         return('да')
     else:
         return('нет')   

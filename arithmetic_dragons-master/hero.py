@@ -8,10 +8,13 @@ class Hero(Attacker):
         self._attack = 50
         self._experience = 0
         self.name = name
+        self.item = None
     def attack(self, target):
         target._health -= self._attack
         print(target._color, target._health, '/', target._healthfull, 'HP')
         
+    def item_claim(self, target):
+        self.item = target._item
 
     
     def exp_gain(self, target):

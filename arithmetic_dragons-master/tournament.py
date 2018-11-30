@@ -11,14 +11,17 @@ def cheat(x):
         pass
 
 
+
+
 def annoying_input_int(message =''):
     answer = None
     while answer == None:
         try:
-            answer = int(input(message))
-        except ValueError:
             answer = input(message)
+        except ValueError:
+            answer = int(answer)
     return answer
+
 
 def troll_tournament(hero, troll_list):
     for troll in troll_list:
@@ -33,6 +36,11 @@ def troll_tournament(hero, troll_list):
             else:
                 troll.attack(hero)
                 print('Ошибка! \n** вам нанесён удар... **')
+                if hero.is_alive() != True:
+                    print('К сожалению, Вы проиграли...')
+                    print('Хотите начать заново?')
+                    if input() == 'да':
+                        start_game()
         if troll.is_alive():
             break
         print(troll._color, 'повержен!\n')
@@ -44,11 +52,7 @@ def troll_tournament(hero, troll_list):
                 hero.lvl_up()
                 print('Поздравляем! Новый уровень, ваши характеристики возросли')
                 hero.exp_down()    
-        else:
-            print('К сожалению, Вы проиграли...')
-            print('Хотите начать заново?')
-            if input() == 'да':
-                start_game()
+
 
 def game_tournament(hero, dragon_list):
     
@@ -64,6 +68,11 @@ def game_tournament(hero, dragon_list):
             else:
                 dragon.attack(hero)
                 print('Ошибка! \n** вам нанесён удар... **')
+                if hero.is_alive() != True:
+                    print('К сожалению, Вы проиграли...')
+                    print('Хотите начать заново?')
+                    if input() == 'да':
+                        start_game()
         if dragon.is_alive():
             break
         print(dragon._color, 'повержен!\n')
@@ -75,11 +84,6 @@ def game_tournament(hero, dragon_list):
                 hero.lvl_up()
                 print('Поздравляем! Новый уровень, ваши характеристики возросли')
                 hero.exp_down()
-        else:
-            print('К сожалению, Вы проиграли...')
-            print('Хотите начать заново?')
-            if input() == 'да':
-                start_game()
 
 def start_game_plus():
 
