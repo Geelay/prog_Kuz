@@ -12,7 +12,7 @@ number_of_balls = 50
 xplace = []
 yplace = []
 text1 = canvas.create_text(400, 25, text='Счёт: ' + str(score) +
-                           '/' + str(number_of_balls), font='Arial 25')
+                                         '/' + str(number_of_balls), font='Arial 25')
 
 
 def cliick(event):
@@ -32,8 +32,8 @@ def cliick(event):
                 canvas.delete(text1)
                 score += 1
                 text1 = canvas.create_text(
-                        400, 25, text='Счёт: ' + str(score) + '/' +
-                        str(number_of_balls), font='Arial 25')
+                    400, 25, text='Счёт: ' + str(score) + '/' +
+                                  str(number_of_balls), font='Arial 25')
                 if speed > 5:
                     speed -= 5
                 break
@@ -58,8 +58,8 @@ def risovach(i):
     yplace.append(random.randint(0, 500))
     # создаём круг
     ovall = canvas.create_oval(
-            xplace[i], yplace[i], xplace[i] + 50,
-            yplace[i] + 50, fill=gr.color_rgb(red, gre, blu))
+        xplace[i], yplace[i], xplace[i] + 50,
+                              yplace[i] + 50, fill=gr.color_rgb(red, gre, blu))
     return (ovall)
 
 
