@@ -90,7 +90,7 @@ class GameManager(object):
         self.last_left_click = 0
         self.right_mouse_held = False
         self.last_cell_held = None
-        self.last_clicked_celll = [None for i in range (9)]
+        self.last_clicked_celll = [self.grid.get_clicked_cell((100,100)) for i in range (9)]
         self.lr_mouse_held = False
         self.i = 1
         self.debug = debugger.Debugger("debug.log")
@@ -146,7 +146,9 @@ class GameManager(object):
         mouse_button_state = pygame.mouse.get_pressed()
         mouse_pos = pygame.mouse.get_pos()
         mouse_released = False   
-
+        for i in range (9):
+            if self.last_clicked_celll[i] is not None:
+                self.last_clicked_celll[i].held = False
         if mouse_button_state[0] and not self.left_mouse_held:
             self.left_mouse_held = True
         elif not mouse_button_state[0] and self.left_mouse_held:
@@ -234,12 +236,12 @@ class GameManager(object):
                     self.last_clicked_celll[i] = clicked_celll[i] 
                     clicked_celll[i].held = True
                 else:
-                    break
-
-
-                        
+                    break             
+                
+                
         elif not mouse_button_state[2] and self.right_mouse_held:
             self.right_mouse_held = False
+
             
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -248,6 +250,7 @@ class GameManager(object):
             #    if event.key == pygame.K_d:
             #        if clicked_cell:
             #            self.debug.write("Is flagged: %s\n" % str(clicked_cell.flagged))
+
 
         if self.mines_flagged == const.MINE_COUNT and self.empty_flagged == 0 and self.is_alive:
             self.player_wins()
